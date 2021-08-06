@@ -1,0 +1,5 @@
+https://docs.opencv.org/4.5.3/d6/d00/tutorial_py_root.html
+
+https://google.github.io/mediapipe/getting_started/install.html
+https://www.youtube.com/watch?v=NZde8Xt78Iw
+https://github.com/bazelbuild/bazelisk/blob/master/README.md
