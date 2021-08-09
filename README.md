@@ -1,7 +1,11 @@
 # Instalar Dependências
 
+Feito com [Python 3.9.6](https://www.python.org/downloads/) (Não testado com versões anteriores)
+
+Necessita do [pip](https://github.com/pypa/get-pip)
+
 ```bash
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 # Documentação
