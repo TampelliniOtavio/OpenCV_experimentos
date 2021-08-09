@@ -82,7 +82,7 @@ def draw_triangle(image, point1: Coordinate, point2: Coordinate, point3: Coordin
     draw_line(image, point3, point1, color=color, thickness=thickness)
 
 
-def draw_hands_from_multi_hand_landmarks(image, multi_hand_landmarks, dots_color=(223, 0, 142), connection_color=()):
+def draw_hands_from_multi_hand_landmarks(image, multi_hand_landmarks, dots_color=(223, 0, 142)):
     for hand_landmarks in multi_hand_landmarks:
         mp.solutions.drawing_utils.draw_landmarks(image, hand_landmarks, mp.solutions.hands.HAND_CONNECTIONS,
                                                 mp.solutions.drawing_utils.DrawingSpec(
