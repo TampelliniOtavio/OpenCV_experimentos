@@ -1,5 +1,4 @@
 import numpy as np
-import track_hands
 from Coord import Coordinate
 import mediapipe as mp
 import cv2
@@ -90,63 +89,5 @@ def draw_hands_from_multi_hand_landmarks(image, multi_hand_landmarks, dots_color
                                                     dots_color, thickness=mp.solutions.drawing_styles._THICKNESS_DOT, circle_radius=mp.solutions.drawing_styles._RADIUS),
                                                 mp.solutions.drawing_styles.get_default_hand_connection_style())
 
-
-def check_for_hangloose(dedao: Coordinate, indicador: Coordinate, meio: Coordinate, anelar: Coordinate, mindinho: Coordinate, punho: Coordinate):
-    x_dedao, y_dedao = dedao.get_coords()
-    x_indicador, y_indicador = indicador.get_coords()
-    x_meio, y_meio = meio.get_coords()
-    x_anelar, y_anelar = anelar.get_coords()
-    x_mindinho, y_mindinho = mindinho.get_coords()
-    x_punho, y_punho = punho.get_coords()
-
-    plano = [mindinho.get_coords(), dedao.get_coords(), punho.get_coords()]
-    quadrado = [[99999999, 99999999], [0, 0]]
-    for a in plano:
-        x, y = a
-        if x < quadrado[0][0]:
-            quadrado[0][0] = x
-        if y < quadrado[0][1]:
-            quadrado[0][1] = y
-
-        if x > quadrado[1][0]:
-            quadrado[1][0] = x
-        if y > quadrado[1][1]:
-            quadrado[1][1] = y
-
-    print(quadrado)
-    # print(plano)
-    # x = [x_dedao, x_mindinho]
-    # y = [y_dedao, y_mindinho]
-
-    # x2 = [(x_indicador + x_meio)/2, (x_anelar + x_meio)/2]
-    # y2 = [(y_indicador + y_meio)/2, (y_anelar + y_meio)/2]
-
-    # a, b = np.polyfit(x, y, 1)
-    # a2,b2 = np.polyfit(x2, y2, 1)
-    # print(f"Equacao da reta entre dedao e mindinho: y = {a:.2f}x + {b:.2f}")
-    # print(f"Equacao da reta entre os 3 dedos do meio: y = {a2:.2f}x + {b2:.2f}")
-    # print(return_y_from_a_b_x(a,b,x_dedao))
-    # angular_coeficient = 0.0
-    # if x_dedao < x_mindinho:
-    #     angular_coeficient = (y_mindinho - y_dedao) / (x_mindinho - x_dedao)
-    # else:
-    #     angular_coeficient = (y_dedao - y_mindinho) / (x_dedao - x_mindinho)
-
-
 if __name__ == '__main__':
-    dedao = Coordinate(1, 3)
-    indicador = Coordinate(111, 222)
-    meio = Coordinate(222, 333)
-    anelar = Coordinate(333, 444)
-    mindinho = Coordinate(3, 5)
-    punho = Coordinate(100, 200)
-    # teste = [dedao, indicador, meio, anelar, mindinho]
-    # pts = []
-    # for coord in teste:
-    #     pts.append(coord.get_coords())
-    # pts = np.array(pts, np.int32)
-    # pts = pts.reshape(-1,1,2)
-    # print(pts)
-    track_hands.main()
-
-    # check_for_hangloose(dedao, indicador, meio,anelar, mindinho)
+    print("ops")
